@@ -16,7 +16,7 @@ public class HelloController {
 	@RequestMapping("/hello")
 	public Map<String, Student> hello() {
 		Map<String, Student> map = new HashMap<String, Student>();
-		Student stu = new Student(0, "zorro", "男", 18);
+		Student stu = new Student(0, "zorro", "男");
 		map.put("1", stu);
 		map.put("2", stu);
 		return map;
@@ -25,7 +25,7 @@ public class HelloController {
 	@RequestMapping("/haha")
 	public List<Student> haha() {
 		List<Student> list = new ArrayList<Student>();
-		Student stu = new Student(0, "zorro", "男", 18);
+		Student stu = new Student(0, "zorro", "男");
 		list.add(0, stu);
 		list.add(1, stu);
 		return list;
