@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.wistron.test.entity.Student;
 
-@CrossOrigin//解决跨域问题
+@CrossOrigin // 解决跨域问题
 @RestController
 public class HelloController {
 	@RequestMapping("/hello")
@@ -23,7 +23,7 @@ public class HelloController {
 		map.put("1", stu2);
 		return map;
 	}
-	
+
 	@RequestMapping("/haha")
 	public List<Student> haha() {
 		List<Student> list = new ArrayList<>();
