@@ -15,8 +15,8 @@ public class StudentServiceImpl implements StudentService {
     @Autowired
     private StudentMapper studentMapper;
 
-    public List<Student> getStudent() {
-        return studentMapper.getStudent();
+    public List<Student> getStudents() {
+        return studentMapper.getStudents();
     }
 
 }

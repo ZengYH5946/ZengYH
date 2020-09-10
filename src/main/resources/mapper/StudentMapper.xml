@@ -4,7 +4,7 @@
     <resultMap id="student" type="com.wistron.test.entity.Student"/>
     <parameterMap id="student" type="com.wistron.test.entity.Student"/>
 
-    <select id="getStudent" resultMap="student">
+    <select id="getStudents" resultMap="student">
         select student.* from Student
     </select>
 </mapper>

@@ -32,7 +32,7 @@ public class HelloController {
 
 	@RequestMapping("/haha")
 	public List<Student> haha() {
-		return studentService.getStudent();
+		return studentService.getStudents();
 	}
 
 	@RequestMapping("/zzz")

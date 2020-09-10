@@ -10,5 +10,5 @@ import org.apache.ibatis.annotations.Mapper;
 public interface StudentMapper {
 
     // @Select("select student.* from student")
-    List<Student> getStudent();
+    List<Student> getStudents();
 }
