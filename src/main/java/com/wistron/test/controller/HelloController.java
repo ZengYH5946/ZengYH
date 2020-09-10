@@ -1,12 +1,13 @@
 package com.wistron.test.controller;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,29 +21,25 @@ public class HelloController {
     @Autowired
     private StudentService studentService;
 
-	@RequestMapping("/hello")
-	public Map<String, Student> hello() {
-		Map<String, Student> map = new HashMap<>();
-		Student stu = new Student(0, "ZengYH", "男");
-		Student stu2 = new Student(1, "ZengYH_Zorro", "男");
-		map.put("0", stu);
-		map.put("1", stu2);
-		return map;
+    @GetMapping("/{id}")
+	public Student getStudent(@PathVariable Integer id) {
+		return studentService.getStudent(id);
 	}
 
-	@RequestMapping("/haha")
-	public List<Student> haha() {
+	@RequestMapping("/getStudents")
+	public List<Student> getStudents() {
 		return studentService.getStudents();
 	}
 
-	@RequestMapping("/zzz")
-	public Map<String, Object> zzz() {
-		Map<String, Object> map = new HashMap<>();
-		List<Student> list = new ArrayList<>();
-		Student stu = new Student(0, "zorro", "男");
-		list.add(0, stu);
-		list.add(1, stu);
-		map.put("test", list);
-		return map;
+	@RequestMapping("/insert")
+	public String insert(Student student) {
+		student.setId(5);
+		student.setName("add");
+		student.setSex("man");
+		if(studentService.insert(student) == 1){
+			return "添加成功";
+		}else{
+			return "添加失败";
+		}
 	}
 }

@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class Student {
-	private int id;
+    private Integer id;
 	private String name;
 	private String sex;
 	
@@ -12,7 +12,7 @@ public class Student {
 		super();
 	}
 	
-	public Student(int id, String name, String sex) {
+	public Student(Integer id, String name, String sex) {
 		super();
 		this.id = id;
 		this.name = name;

@@ -15,8 +15,19 @@ public class StudentServiceImpl implements StudentService {
     @Autowired
     private StudentMapper studentMapper;
 
+    @Override
+    public Student getStudent(Integer id) {
+        return studentMapper.getStudent(id);
+    }    
+    @Override
     public List<Student> getStudents() {
         return studentMapper.getStudents();
     }
+
+    @Override
+    public int insert(Student student) {
+        return studentMapper.insert(student);
+    }
+
 
 }
