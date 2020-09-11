@@ -1,0 +1,300 @@
+2020-09-11 11:03:43 -Starting SpringBootTestApplication on c0-i09-hj-t6 with PID 10856 (C:\Users\gws-rhz8cxk2jku\VSCodeProjects\spring-boot-test\target\classes started by gws-rhz8cxk2jku in C:\Users\gws-rhz8cxk2jku\VSCodeProjects\spring-boot-test)
+2020-09-11 11:03:43 -No active profile set, falling back to default profiles: default
+2020-09-11 11:03:43 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-09-11 11:03:43 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-09-11 11:03:45 -Tomcat initialized with port(s): 8080 (http)
+2020-09-11 11:03:45 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-09-11 11:03:45 -Starting service [Tomcat]
+2020-09-11 11:03:45 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-11 11:03:45 -Initializing Spring embedded WebApplicationContext
+2020-09-11 11:03:45 -Root WebApplicationContext: initialization completed in 1898 ms
+2020-09-11 11:03:46 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-11 11:03:46 -LiveReload server is running on port 35729
+2020-09-11 11:03:46 -Starting ProtocolHandler ["http-nio-8080"]
+2020-09-11 11:03:46 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-09-11 11:03:46 -Started SpringBootTestApplication in 3.453 seconds (JVM running for 4.211)
+2020-09-11 11:03:54 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-11 11:03:54 -Initializing Servlet 'dispatcherServlet'
+2020-09-11 11:03:54 -Completed initialization in 12 ms
+2020-09-11 11:03:54 -Retail_HikariCP - Starting...
+2020-09-11 11:03:54 -Retail_HikariCP - Start completed.
+2020-09-11 11:03:54 -==>  Preparing: insert into student values(?,?,?,?) 
+2020-09-11 11:03:54 -==> Parameters: 5(Integer), add(String), man(String), 20170418(String)
+2020-09-11 11:03:54 -Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '5' for key 'student.PRIMARY'
+### The error may involve com.wistron.test.mapper.StudentMapper.student
+### The error occurred while setting parameters
+### SQL: insert into student values(?,?,?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '5' for key 'student.PRIMARY'
+; Duplicate entry '5' for key 'student.PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '5' for key 'student.PRIMARY'] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '5' for key 'student.PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy71.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy61.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:57)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy62.insert(Unknown Source)
+	at com.wistron.test.service.impl.StudentServiceImpl.insert(StudentServiceImpl.java:30)
+	at com.wistron.test.controller.StudentController.insert(StudentController.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2020-09-11 11:03:55 -Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"]
+2020-09-11 11:04:31 -Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-11 11:04:31 -Retail_HikariCP - Shutdown initiated...
+2020-09-11 11:04:31 -Retail_HikariCP - Shutdown completed.
+2020-09-11 11:04:31 -Starting SpringBootTestApplication on c0-i09-hj-t6 with PID 10856 (C:\Users\gws-rhz8cxk2jku\VSCodeProjects\spring-boot-test\target\classes started by gws-rhz8cxk2jku in C:\Users\gws-rhz8cxk2jku\VSCodeProjects\spring-boot-test)
+2020-09-11 11:04:31 -No active profile set, falling back to default profiles: default
+2020-09-11 11:04:32 -Tomcat initialized with port(s): 8080 (http)
+2020-09-11 11:04:32 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-09-11 11:04:32 -Starting service [Tomcat]
+2020-09-11 11:04:32 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-11 11:04:32 -Initializing Spring embedded WebApplicationContext
+2020-09-11 11:04:32 -Root WebApplicationContext: initialization completed in 825 ms
+2020-09-11 11:04:32 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-11 11:04:32 -LiveReload server is running on port 35729
+2020-09-11 11:04:32 -Starting ProtocolHandler ["http-nio-8080"]
+2020-09-11 11:04:32 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-09-11 11:04:32 -Started SpringBootTestApplication in 1.251 seconds (JVM running for 50.555)
+2020-09-11 11:04:32 -Condition evaluation unchanged
+2020-09-11 11:04:35 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-11 11:04:35 -Initializing Servlet 'dispatcherServlet'
+2020-09-11 11:04:35 -Completed initialization in 3 ms
+2020-09-11 11:04:35 -Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.wistron.test.entity.RespBean com.wistron.test.controller.StudentController.insert(com.wistron.test.entity.Student)]
+2020-09-11 11:04:35 -Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"]
+2020-09-11 11:05:45 -Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-11 11:05:45 -Starting SpringBootTestApplication on c0-i09-hj-t6 with PID 10856 (C:\Users\gws-rhz8cxk2jku\VSCodeProjects\spring-boot-test\target\classes started by gws-rhz8cxk2jku in C:\Users\gws-rhz8cxk2jku\VSCodeProjects\spring-boot-test)
+2020-09-11 11:05:45 -No active profile set, falling back to default profiles: default
+2020-09-11 11:05:45 -Tomcat initialized with port(s): 8080 (http)
+2020-09-11 11:05:45 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-09-11 11:05:45 -Starting service [Tomcat]
+2020-09-11 11:05:45 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-11 11:05:45 -Initializing Spring embedded WebApplicationContext
+2020-09-11 11:05:45 -Root WebApplicationContext: initialization completed in 391 ms
+2020-09-11 11:05:46 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-11 11:05:46 -LiveReload server is running on port 35729
+2020-09-11 11:05:46 -Starting ProtocolHandler ["http-nio-8080"]
+2020-09-11 11:05:46 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-09-11 11:05:46 -Started SpringBootTestApplication in 0.774 seconds (JVM running for 123.863)
+2020-09-11 11:05:46 -Condition evaluation unchanged
+2020-09-11 11:07:49 -Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-11 11:07:49 -Starting SpringBootTestApplication on c0-i09-hj-t6 with PID 10856 (C:\Users\gws-rhz8cxk2jku\VSCodeProjects\spring-boot-test\target\classes started by gws-rhz8cxk2jku in C:\Users\gws-rhz8cxk2jku\VSCodeProjects\spring-boot-test)
+2020-09-11 11:07:49 -No active profile set, falling back to default profiles: default
+2020-09-11 11:07:50 -Tomcat initialized with port(s): 8080 (http)
+2020-09-11 11:07:50 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-09-11 11:07:50 -Starting service [Tomcat]
+2020-09-11 11:07:50 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-11 11:07:50 -Initializing Spring embedded WebApplicationContext
+2020-09-11 11:07:50 -Root WebApplicationContext: initialization completed in 410 ms
+2020-09-11 11:07:50 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-11 11:07:50 -LiveReload server is running on port 35729
+2020-09-11 11:07:50 -Starting ProtocolHandler ["http-nio-8080"]
+2020-09-11 11:07:50 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-09-11 11:07:50 -Started SpringBootTestApplication in 0.718 seconds (JVM running for 248.057)
+2020-09-11 11:07:50 -Condition evaluation unchanged
+2020-09-11 11:11:11 -Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-11 11:11:11 -Starting SpringBootTestApplication on c0-i09-hj-t6 with PID 10856 (C:\Users\gws-rhz8cxk2jku\VSCodeProjects\spring-boot-test\target\classes started by gws-rhz8cxk2jku in C:\Users\gws-rhz8cxk2jku\VSCodeProjects\spring-boot-test)
+2020-09-11 11:11:11 -No active profile set, falling back to default profiles: default
+2020-09-11 11:11:12 -Tomcat initialized with port(s): 8080 (http)
+2020-09-11 11:11:12 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-09-11 11:11:12 -Starting service [Tomcat]
+2020-09-11 11:11:12 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-11 11:11:12 -Initializing Spring embedded WebApplicationContext
+2020-09-11 11:11:12 -Root WebApplicationContext: initialization completed in 528 ms
+2020-09-11 11:11:12 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-11 11:11:12 -LiveReload server is running on port 35729
+2020-09-11 11:11:12 -Starting ProtocolHandler ["http-nio-8080"]
+2020-09-11 11:11:12 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-09-11 11:11:12 -Started SpringBootTestApplication in 0.864 seconds (JVM running for 450.14)
+2020-09-11 11:11:12 -Condition evaluation unchanged
+2020-09-11 11:11:18 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-11 11:11:18 -Initializing Servlet 'dispatcherServlet'
+2020-09-11 11:11:18 -Completed initialization in 3 ms
+2020-09-11 11:11:21 -Retail_HikariCP - Starting...
+2020-09-11 11:11:21 -Retail_HikariCP - Start completed.
+2020-09-11 11:11:21 -==>  Preparing: select student.* from student where stu_id = ? 
+2020-09-11 11:11:21 -==> Parameters: 1(Integer)
+2020-09-11 11:11:21 -<==      Total: 1
+2020-09-11 11:12:21 -Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-11 11:12:21 -Retail_HikariCP - Shutdown initiated...
+2020-09-11 11:12:21 -Retail_HikariCP - Shutdown completed.
+2020-09-11 11:12:22 -Starting SpringBootTestApplication on c0-i09-hj-t6 with PID 10856 (C:\Users\gws-rhz8cxk2jku\VSCodeProjects\spring-boot-test\target\classes started by gws-rhz8cxk2jku in C:\Users\gws-rhz8cxk2jku\VSCodeProjects\spring-boot-test)
+2020-09-11 11:12:22 -No active profile set, falling back to default profiles: default
+2020-09-11 11:12:22 -Tomcat initialized with port(s): 8080 (http)
+2020-09-11 11:12:22 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-09-11 11:12:22 -Starting service [Tomcat]
+2020-09-11 11:12:22 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-11 11:12:22 -Initializing Spring embedded WebApplicationContext
+2020-09-11 11:12:22 -Root WebApplicationContext: initialization completed in 456 ms
+2020-09-11 11:12:22 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-11 11:12:22 -LiveReload server is running on port 35729
+2020-09-11 11:12:22 -Starting ProtocolHandler ["http-nio-8080"]
+2020-09-11 11:12:22 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-09-11 11:12:22 -Started SpringBootTestApplication in 0.799 seconds (JVM running for 520.324)
+2020-09-11 11:12:22 -Condition evaluation unchanged
+2020-09-11 11:12:58 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-11 11:12:58 -Initializing Servlet 'dispatcherServlet'
+2020-09-11 11:12:58 -Completed initialization in 2 ms
+2020-09-11 11:12:58 -Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.wistron.test.entity.RespBean com.wistron.test.controller.StudentController.insert(com.wistron.test.entity.Student)]
+2020-09-11 11:13:05 -Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-11 11:13:05 -Starting SpringBootTestApplication on c0-i09-hj-t6 with PID 10856 (C:\Users\gws-rhz8cxk2jku\VSCodeProjects\spring-boot-test\target\classes started by gws-rhz8cxk2jku in C:\Users\gws-rhz8cxk2jku\VSCodeProjects\spring-boot-test)
+2020-09-11 11:13:05 -No active profile set, falling back to default profiles: default
+2020-09-11 11:13:06 -Tomcat initialized with port(s): 8080 (http)
+2020-09-11 11:13:06 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-09-11 11:13:06 -Starting service [Tomcat]
+2020-09-11 11:13:06 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-11 11:13:06 -Initializing Spring embedded WebApplicationContext
+2020-09-11 11:13:06 -Root WebApplicationContext: initialization completed in 349 ms
+2020-09-11 11:13:06 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-11 11:13:06 -LiveReload server is running on port 35729
+2020-09-11 11:13:06 -Starting ProtocolHandler ["http-nio-8080"]
+2020-09-11 11:13:06 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-09-11 11:13:06 -Started SpringBootTestApplication in 0.601 seconds (JVM running for 563.993)
+2020-09-11 11:13:06 -Condition evaluation unchanged
+2020-09-11 11:13:09 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-11 11:13:09 -Initializing Servlet 'dispatcherServlet'
+2020-09-11 11:13:09 -Completed initialization in 2 ms
+2020-09-11 11:13:09 -Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.wistron.test.entity.RespBean com.wistron.test.controller.StudentController.insert(com.wistron.test.entity.Student)]
+2020-09-11 11:13:12 -Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.wistron.test.entity.RespBean com.wistron.test.controller.StudentController.insert(com.wistron.test.entity.Student)]
+2020-09-11 11:13:35 -Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-11 11:13:35 -Starting SpringBootTestApplication on c0-i09-hj-t6 with PID 10856 (C:\Users\gws-rhz8cxk2jku\VSCodeProjects\spring-boot-test\target\classes started by gws-rhz8cxk2jku in C:\Users\gws-rhz8cxk2jku\VSCodeProjects\spring-boot-test)
+2020-09-11 11:13:35 -No active profile set, falling back to default profiles: default
+2020-09-11 11:13:35 -Tomcat initialized with port(s): 8080 (http)
+2020-09-11 11:13:35 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-09-11 11:13:35 -Starting service [Tomcat]
+2020-09-11 11:13:35 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-11 11:13:35 -Initializing Spring embedded WebApplicationContext
+2020-09-11 11:13:35 -Root WebApplicationContext: initialization completed in 445 ms
+2020-09-11 11:13:35 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-11 11:13:35 -LiveReload server is running on port 35729
+2020-09-11 11:13:35 -Starting ProtocolHandler ["http-nio-8080"]
+2020-09-11 11:13:35 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-09-11 11:13:36 -Started SpringBootTestApplication in 0.717 seconds (JVM running for 593.595)
+2020-09-11 11:13:36 -Condition evaluation unchanged
+2020-09-11 11:13:38 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-11 11:13:38 -Initializing Servlet 'dispatcherServlet'
+2020-09-11 11:13:38 -Completed initialization in 2 ms
+2020-09-11 11:13:38 -Retail_HikariCP - Starting...
+2020-09-11 11:13:38 -Retail_HikariCP - Start completed.
+2020-09-11 11:13:38 -==>  Preparing: insert into student values(?,?,?,?) 
+2020-09-11 11:13:38 -==> Parameters: null, add(String), man(String), 20170418(String)
+2020-09-11 11:13:38 -<==    Updates: 1
+2020-09-11 11:14:51 -Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-11 11:14:51 -Retail_HikariCP - Shutdown initiated...
+2020-09-11 11:14:51 -Retail_HikariCP - Shutdown completed.
+2020-09-11 11:14:51 -Starting SpringBootTestApplication on c0-i09-hj-t6 with PID 10856 (C:\Users\gws-rhz8cxk2jku\VSCodeProjects\spring-boot-test\target\classes started by gws-rhz8cxk2jku in C:\Users\gws-rhz8cxk2jku\VSCodeProjects\spring-boot-test)
+2020-09-11 11:14:51 -No active profile set, falling back to default profiles: default
+2020-09-11 11:14:51 -Tomcat initialized with port(s): 8080 (http)
+2020-09-11 11:14:51 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-09-11 11:14:51 -Starting service [Tomcat]
+2020-09-11 11:14:51 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-11 11:14:51 -Initializing Spring embedded WebApplicationContext
+2020-09-11 11:14:51 -Root WebApplicationContext: initialization completed in 324 ms
+2020-09-11 11:14:51 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-11 11:14:52 -LiveReload server is running on port 35729
+2020-09-11 11:14:52 -Starting ProtocolHandler ["http-nio-8080"]
+2020-09-11 11:14:52 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-09-11 11:14:52 -Started SpringBootTestApplication in 0.537 seconds (JVM running for 669.606)
+2020-09-11 11:14:52 -Condition evaluation unchanged
+2020-09-11 11:17:14 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-11 11:17:14 -Initializing Servlet 'dispatcherServlet'
+2020-09-11 11:17:14 -Completed initialization in 2 ms
+2020-09-11 11:17:14 -Retail_HikariCP - Starting...
+2020-09-11 11:17:14 -Retail_HikariCP - Start completed.
+2020-09-11 11:17:14 -==>  Preparing: insert into student values(?,?,?,?) 
+2020-09-11 11:17:14 -==> Parameters: null, add(String), man(String), 20170418(String)
+2020-09-11 11:17:14 -<==    Updates: 1
+2020-09-11 11:17:21 -==>  Preparing: select student.* from student 
+2020-09-11 11:17:21 -==> Parameters: 
+2020-09-11 11:17:21 -<==      Total: 12
+2020-09-11 11:18:10 -==>  Preparing: select student.* from student 
+2020-09-11 11:18:10 -==> Parameters: 
+2020-09-11 11:18:10 -<==      Total: 5
+2020-09-11 11:40:29 -Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-11 11:40:29 -Retail_HikariCP - Shutdown initiated...
+2020-09-11 11:40:29 -Retail_HikariCP - Shutdown completed.
+2020-09-11 11:40:29 -Starting SpringBootTestApplication on c0-i09-hj-t6 with PID 10856 (C:\Users\gws-rhz8cxk2jku\VSCodeProjects\spring-boot-test\target\classes started by gws-rhz8cxk2jku in C:\Users\gws-rhz8cxk2jku\VSCodeProjects\spring-boot-test)
+2020-09-11 11:40:29 -No active profile set, falling back to default profiles: default
+2020-09-11 11:40:29 -Tomcat initialized with port(s): 8080 (http)
+2020-09-11 11:40:29 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-09-11 11:40:29 -Starting service [Tomcat]
+2020-09-11 11:40:29 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-11 11:40:29 -Initializing Spring embedded WebApplicationContext
+2020-09-11 11:40:29 -Root WebApplicationContext: initialization completed in 313 ms
+2020-09-11 11:40:29 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-11 11:40:30 -LiveReload server is running on port 35729
+2020-09-11 11:40:30 -Starting ProtocolHandler ["http-nio-8080"]
+2020-09-11 11:40:30 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-09-11 11:40:30 -Started SpringBootTestApplication in 0.667 seconds (JVM running for 2207.751)
+2020-09-11 11:40:30 -Condition evaluation unchanged
