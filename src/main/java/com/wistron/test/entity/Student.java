@@ -2,10 +2,6 @@ package com.wistron.test.entity;
 
 import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
 import lombok.Data;
 
 @Data
@@ -18,8 +14,8 @@ public class Student implements Serializable {
 	private Integer stuId;
 	private String stuName;
 	private String stuSex;
-	@DateTimeFormat(pattern = "yyyy-MM-dd") // 时间格式转换
-	@JsonFormat(pattern = "yyyy-MM-dd") // 时间格式转换
+	// @DateTimeFormat(pattern = "yyyy-MM-dd")
+	// @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
 	private String stuTime;
 
 	public Student() {

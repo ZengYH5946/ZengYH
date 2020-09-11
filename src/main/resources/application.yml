@@ -22,8 +22,10 @@ spring:
       connection-timeout: 30000 #数据库连接超时时间,默认30秒，即30000
       connection-test-query: SELECT 1
   jackson:
-    date-format: yyyy-MM-dd HH:mm:ss
+    date-format: yyyy-MM-dd #HH:mm:ss
     time-zone: GMT+8
+    serialization: 
+      write-dates-as-timestamps: false
 
 mybatis:
   # config-location: classpath:mapper/mybatis-config.xml

@@ -30,4 +30,14 @@ public class StudentServiceImpl implements StudentService {
         return studentMapper.insert(student);
     }
 
+    @Override
+    public int delStudent(Integer stuId) {
+        return studentMapper.delStudent(stuId);
+    }
+
+    @Override
+    public int updateStudent(Student student) {
+        return studentMapper.updateStudent(student);
+    }
+
 }

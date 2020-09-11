@@ -14,4 +14,8 @@ public interface StudentMapper {
     List<Student> getStudents();
 
     int insert(Student student);
+
+    int delStudent(Integer stuId);
+
+    int updateStudent(Student student);
 }

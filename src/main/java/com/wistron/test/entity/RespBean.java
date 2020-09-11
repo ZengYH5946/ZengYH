@@ -3,8 +3,8 @@ package com.wistron.test.entity;
 /**
  * JSON结果封装类 RespBean
  *
- * @author ZengYH
- * @since 2020-06-26 11:39:48
+ * @author Zorro
+ * @since 2020年9月11日
  */
 // ("RespBean(JSON结果统一封装)实体类")
 public class RespBean {

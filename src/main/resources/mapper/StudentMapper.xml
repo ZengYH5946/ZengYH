@@ -5,7 +5,7 @@
     <parameterMap id="student" type="com.wistron.test.entity.Student"/>
 
     <!-- 根据Id查询信息 -->
-    <select id="getStudent" resultMap="student" parameterType="java.lang.Integer">
+    <select id="getStudent" resultMap="student" parameterMap="student">
         select student.* from student where stu_id = #{stuId}
     </select>
 
@@ -18,4 +18,14 @@
     <insert id="insert" parameterMap="student">
         insert into student values(#{stuId},#{stuName},#{stuSex},#{stuTime})
     </insert>
+
+    <!-- 刪除一个信息 -->
+    <delete id="delStudent" parameterMap="student">
+        delete from student where stu_id = #{stuId}
+    </delete>
+
+    <!-- 修改一个信息 -->
+    <update id="updateStudent" parameterMap="student">
+        update student set stu_name = #{stuName},stu_sex = #{stuSex},stu_time = #{stuTime} where stu_id=#{stuId}
+    </update>
 </mapper>
