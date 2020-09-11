@@ -6,7 +6,7 @@
 
     <!-- 根据Id查询信息 -->
     <select id="getStudent" resultMap="student" parameterType="java.lang.Integer">
-        select student.* from student where id = #{id}
+        select student.* from student where stu_id = #{stuId}
     </select>
 
     <!-- 查询全部学生信息 -->
@@ -16,6 +16,6 @@
 
     <!-- 添加一个信息 -->
     <insert id="insert" parameterMap="student">
-        insert into student values(#{id},#{name},#{sex})
+        insert into student values(#{stuId},#{stuName},#{stuSex},#{stuTime})
     </insert>
 </mapper>

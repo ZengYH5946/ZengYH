@@ -16,9 +16,10 @@ public class StudentServiceImpl implements StudentService {
     private StudentMapper studentMapper;
 
     @Override
-    public Student getStudent(Integer id) {
-        return studentMapper.getStudent(id);
-    }    
+    public Student getStudent(Integer stuId) {
+        return studentMapper.getStudent(stuId);
+    }
+
     @Override
     public List<Student> getStudents() {
         return studentMapper.getStudents();
@@ -28,6 +29,5 @@ public class StudentServiceImpl implements StudentService {
     public int insert(Student student) {
         return studentMapper.insert(student);
     }
-
 
 }

@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface StudentMapper {
-    Student getStudent(Integer id);
+    Student getStudent(Integer stuId);
 
     // @Select("select student.* from student")
     List<Student> getStudents();
