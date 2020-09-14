@@ -14,6 +14,7 @@ import com.wistron.test.service.StudentService;
 
 @CrossOrigin // 解决跨域问题
 @RestController
+@RequestMapping("/stu")
 public class StudentController {
 
 	@Autowired
@@ -28,7 +29,7 @@ public class StudentController {
 		return RespBean.error("查询失败");
 	}
 
-	@RequestMapping("/getStudents")
+	@RequestMapping("/get")
 	public RespBean getStudents() {
 		List<Student> list = studentService.getStudents();
 		if (list.size() > 0) {
@@ -37,7 +38,7 @@ public class StudentController {
 		return RespBean.error("查询失败");
 	}
 
-	@RequestMapping("/insert")
+	@RequestMapping("/add")
 	public RespBean insert(Student student) {
 		// student.setStuId(5);//自增属性
 		student.setStuName("Zorro");
