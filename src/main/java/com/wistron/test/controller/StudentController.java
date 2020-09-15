@@ -63,7 +63,7 @@ public class StudentController {
 		student.setStuId(stuId);
 		student.setStuName("ZengYH");
 		student.setStuSex("man");
-		student.setStuTime("20200202");
+		student.setStuTime("2020.02.02");
 		if (studentService.updateStudent(student) == 1) {
 			return RespBean.ok("修改成功");
 		}

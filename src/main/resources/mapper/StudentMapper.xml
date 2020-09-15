@@ -1,31 +1,90 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wistron.test.mapper.StudentMapper">
-    <resultMap id="student" type="com.wistron.test.entity.Student"/>
-    <parameterMap id="student" type="com.wistron.test.entity.Student"/>
+    <resultMap id="StudentResultMap" type="com.wistron.test.entity.Student"/>
+    <parameterMap id="StudentParameterMap" type="com.wistron.test.entity.Student"/>
+
+    <sql id="table_field">
+        stu_id, stu_name, stu_sex, stu_time      
+    </sql>
 
     <!-- 根据Id查询信息 -->
-    <select id="getStudent" resultMap="student" parameterMap="student">
-        select student.* from student where stu_id = #{stuId}
+    <select id="getStudent" resultMap="StudentResultMap" parameterMap="StudentParameterMap">
+        select
+        <include refid="table_field" />
+        from student
+        where stu_id = #{stuId}
     </select>
 
     <!-- 查询全部学生信息 -->
-    <select id="getStudents" resultMap="student">
-        select student.* from student
+    <select id="getStudents" resultMap="StudentResultMap" parameterMap="StudentParameterMap">
+        select
+        <include refid="table_field" />
+         from student
+        <where>
+            <if test="stuId != null">
+                and stu_id = #{stuId}
+            </if>
+            <if test="stuName != null">
+                and stu_name = #{stuName}
+            </if>
+            <if test="stuSex != null">
+                and stu_sex = #{stuSex}
+            </if>
+            <if test="stuTime != null">
+                and stu_time = #{stuTime}
+            </if>
+        </where>
     </select>
 
     <!-- 添加一个信息 -->
-    <insert id="insert" parameterMap="student">
-        insert into student values(#{stuId},#{stuName},#{stuSex},#{stuTime})
+    <insert id="insert" parameterMap="StudentParameterMap">
+        insert into student
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="stuId != null">
+             stu_id,
+            </if>
+            <if test="stuName != null">
+             stu_name,
+            </if>
+            <if test="stuSex != null">
+             stu_sex,
+            </if>
+            <if test="stuTime != null">
+             stu_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="stuId != null"> #{stuId},
+            </if>
+            <if test="stuName != null"> #{stuName},
+            </if>
+            <if test="stuSex != null"> #{stuSex},
+            </if>
+            <if test="stuTime != null"> #{stuTime},
+            </if>
+        </trim>
     </insert>
 
+    <!-- 修改一个信息 -->
+    <update id="updateStudent" parameterMap="StudentParameterMap">
+        update student
+        <set>
+            <if test="stuName != null and stuName != ''">
+                stu_name = #{stuName},
+            </if>
+            <if test="stuSex != null and stuSex != ''">
+                stu_sex = #{stuSex},
+            </if>
+            <if test="stuTime != null and stuTime != ''">
+                stu_time = #{stuTime},
+            </if>
+        </set>
+        where stu_id=#{stuId}
+    </update>
+
     <!-- 刪除一个信息 -->
-    <delete id="delStudent" parameterMap="student">
+    <delete id="delStudent" parameterMap="StudentParameterMap">
         delete from student where stu_id = #{stuId}
     </delete>
-
-    <!-- 修改一个信息 -->
-    <update id="updateStudent" parameterMap="student">
-        update student set stu_name = #{stuName},stu_sex = #{stuSex},stu_time = #{stuTime} where stu_id=#{stuId}
-    </update>
 </mapper>
