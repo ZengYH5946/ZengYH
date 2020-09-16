@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -38,12 +40,13 @@ public class StudentController {
 		return RespBean.error("查询失败");
 	}
 
-	@RequestMapping("/add")
-	public RespBean insert(Student student) {
+	@PostMapping("/add")
+	public RespBean insert(@RequestBody Student student) {
 		// student.setStuId(5);//自增属性
-		student.setStuName("Zorro");
-		student.setStuSex("man");
-		student.setStuTime("19990909");
+		// student.setStuName("Zorro");
+		// student.setStuSex("man");
+		// student.setStuTime("19990909");
+		System.out.println(student.toString());
 		if (studentService.insert(student) == 1) {
 			return RespBean.ok("添加成功");
 		}
@@ -58,12 +61,12 @@ public class StudentController {
 		return RespBean.error("刪除失败");
 	}
 
-	@RequestMapping("/update/{stuId}")
-	public RespBean updateStudent(Student student, @PathVariable Integer stuId) {
-		student.setStuId(stuId);
-		student.setStuName("ZengYH");
-		student.setStuSex("man");
-		student.setStuTime("2020.02.02");
+	@RequestMapping("/update")///{stuId}
+	public RespBean updateStudent(@RequestBody Student student) {//, @PathVariable Integer stuId
+		// student.setStuId(stuId);
+		// student.setStuName("ZengYH");
+		// student.setStuSex("man");
+		// student.setStuTime("2020.02.02");
 		if (studentService.updateStudent(student) == 1) {
 			return RespBean.ok("修改成功");
 		}
