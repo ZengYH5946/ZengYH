@@ -41,7 +41,7 @@ public class StudentController {
 	}
 
 	@PostMapping("/add")
-	public RespBean insert(@RequestBody Student student) {
+	public RespBean insert(@RequestBody Student student) {//@RequestBody 解析json格式
 		// student.setStuId(5);//自增属性
 		// student.setStuName("Zorro");
 		// student.setStuSex("man");
@@ -61,7 +61,7 @@ public class StudentController {
 		return RespBean.error("刪除失败");
 	}
 
-	@RequestMapping("/update")///{stuId}
+	@PostMapping("/update")///{stuId}
 	public RespBean updateStudent(@RequestBody Student student) {//, @PathVariable Integer stuId
 		// student.setStuId(stuId);
 		// student.setStuName("ZengYH");
